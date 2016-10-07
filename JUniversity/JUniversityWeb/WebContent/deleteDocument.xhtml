@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<h:body>
+
+	<h3>Apagar Documento</h3>
+	<f:view>
+	<h:form>
+		<h:messages style="color:red;margin:8px;" />	
+		
+		
+		<h:inputHidden value="#{documentoManagedBean.documento.pkDocumento}" />
+		
+		<h:outputLabel for="exclui" value="#{documentoManagedBean.documento.nome}-#{documentoManagedBean.documento.assunto}" styleClass="deleteText"/>
+		
+		<h:panelGrid columns="2">
+			<h:commandButton action="#{documentoManagedBean.deleteDocumentoEnd()}" value="#{msgs.delete}" />
+			<h:commandButton action="#{documentoManagedBean.listAllDocumentos()}" value="#{msgs.cancel}" immediate="true" />
+		</h:panelGrid>
+		<br/>
+	</h:form>
+	</f:view>
+</h:body>
+</html>

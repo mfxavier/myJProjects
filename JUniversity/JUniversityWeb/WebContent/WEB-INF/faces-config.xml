@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ <navigation-rule>
+  <description>Listar todos os Documentos</description>
+  <from-view-id>/listAllDocuments.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>updateDocument</from-outcome>
+   <to-view-id>/updateDocument.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>deleteDocument</from-outcome>
+   <to-view-id>/deleteDocument.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <description>Criar Documentos</description>
+  <from-view-id>/createDocument.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>listAllDocuments</from-outcome>
+   <to-view-id>/listAllDocuments.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <description>Apagar Documentos</description>
+  <from-view-id>/deleteDocument.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>listAllDocuments</from-outcome>
+   <to-view-id>/listAllDocuments.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <application>
+  <resource-bundle>
+   <base-name>messages</base-name>
+   <var>msgs</var>
+  </resource-bundle>
+ </application>
+</faces-config>

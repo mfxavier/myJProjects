@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#listAllDocuments.xhtml"
+  PATH="/listAllDocuments.xhtml" SHAPE="256,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#listAllDocuments.xhtml:0" NAME="item"
+   PATH="/listAllDocuments.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="updateDocument::#updateDocument.xhtml"
+    NAME="output" PATH="/updateDocument.xhtml"
+    TARGET="rules:#updateDocument.xhtml" TITLE="updateDocument" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="deleteDocument::#deleteDocument.xhtml"
+    NAME="output1" PATH="/deleteDocument.xhtml"
+    TARGET="rules:#deleteDocument.xhtml" TITLE="deleteDocument" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#createDocument.xhtml"
+  PATH="/createDocument.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#createDocument.xhtml:0" NAME="item"
+   PATH="/createDocument.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listAllDocuments::#listAllDocuments.xhtml"
+    NAME="output" PATH="/listAllDocuments.xhtml"
+    TARGET="rules:#listAllDocuments.xhtml" TITLE="listAllDocuments" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#deleteDocument.xhtml"
+  PATH="/deleteDocument.xhtml" SHAPE="480,161,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#deleteDocument.xhtml:0" NAME="item"
+   PATH="/deleteDocument.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listAllDocuments::#listAllDocuments.xhtml"
+    NAME="output" PATH="/listAllDocuments.xhtml"
+    TARGET="rules:#listAllDocuments.xhtml" TITLE="listAllDocuments" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#updateDocument.xhtml"
+  PATH="/updateDocument.xhtml" SHAPE="480,17,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

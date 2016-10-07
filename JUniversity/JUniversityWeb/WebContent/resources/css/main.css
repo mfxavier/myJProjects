@@ -1,0 +1,43 @@
+.table {
+	border-collapse: collapse;
+}
+
+.tableColumnsHeader {
+	text-align: center;
+	background: none repeat scroll 0 0 #E5E5E5;
+	border-bottom: 1px solid #BBBBBB;
+	padding: 25px;
+}
+
+.tableFirstLine {
+	text-align: center;
+	background: none repeat scroll 0 0 #F9F9F9;
+	border-top: 1px solid #BBBBBB;
+	
+}
+
+.tableNextLine {
+	text-align: center;
+	background: none repeat scroll 0 0 #FFFFFFF;
+	border-top: 1px solid #BBBBBB;
+	
+}
+
+.panelGrid {
+	border: 1px solid;
+}
+
+.panelFirstLine {
+	text-align: left;
+	border-top: 1px solid #BBBBBB;
+}
+
+.panelNextLine {
+	text-align: left;
+	border-top: 1px solid #BBBBBB;
+}
+
+.deleteText {
+	border: 1px solid;
+	background: none repeat scroll 0 0 #FAFAFA;
+}

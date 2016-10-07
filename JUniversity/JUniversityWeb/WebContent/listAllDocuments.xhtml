@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<h:body>
+
+	<h3>Lista Todos os Documentos</h3>
+
+	<f:view>		
+	<h:form>
+
+		<h:messages style="color:red;margin:8px;" />
+		
+		<h:dataTable value="#{documentoManagedBean.allDocumentos}" var="documento" styleClass="table" headerClass="tableColumnsHeader" rowClasses="tableFirstLine,tableNextLine"> 
+			<h:inputHidden value="#{documentoManagedBean.documento.pkDocumento}" />
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msgs.nome}" />
+					<f:attribute name="width" value="20%" />
+				</f:facet>
+				
+				<h:outputText value="#{documento.nome}" />
+				
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msgs.assunto}" />
+					
+				</f:facet>
+				
+				<h:outputText value="#{documento.assunto}" />
+				<f:attribute name="width" value="20%" />
+			</h:column>
+		
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msgs.dtCriacao}" />		
+		
+				</f:facet>
+				
+				<h:outputText value="#{documento.dataInclusao}" >
+					<f:convertDateTime pattern="dd-MM-yyyy HH:mm" />
+				</h:outputText>
+				<f:attribute name="width" value="20%" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msgs.dtAlteracao}" />
+			 
+				</f:facet>
+					<h:outputText value="#{documento.dataAlteracao}" >
+						<f:convertDateTime pattern="dd-MM-yyyy HH:mm" />		
+					</h:outputText>
+				<f:attribute name="width" value="20%" />	
+			</h:column>
+						
+			<h:column>		
+				<h:panelGrid columns="2">
+	
+					<h:commandButton action="#{documentoManagedBean.updateDocumentoStart()}" value="#{msgs.update}"  >
+						<f:setPropertyActionListener target="#{documentoManagedBean.documento}" value="#{documento}" />
+					</h:commandButton>
+	
+					<h:commandButton action="#{documentoManagedBean.deleteDocumentoStart()}" value="#{msgs.delete}"  >
+						<f:setPropertyActionListener target="#{documentoManagedBean.documento}" value="#{documento}" />
+						</h:commandButton>
+				</h:panelGrid>
+	
+			</h:column>
+			
+		</h:dataTable>
+		<h:commandButton action="#{documentoManagedBean.createDocumentoStart()}" value="#{msgs.create}" />
+
+	</h:form>
+	</f:view>
+</h:body>
+</html>

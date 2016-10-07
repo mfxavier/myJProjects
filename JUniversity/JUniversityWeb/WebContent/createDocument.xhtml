@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"   
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<h:outputStylesheet library="css" name="main.css" />
+</h:head>
+
+<h:body>
+
+	<h3>Incluir Documento</h3>
+	<f:view>
+
+	<h:form>
+		<h:messages style="color:red;margin:8px;" />
+		
+		<h:panelGrid columns="2" styleClass="panelGrid" rowClasses="panelFirstLine,panelNextLine" >
+			<h:outputLabel for="aluno" value="#{msgs.aluno}" />
+			<h:inputText id="aluno" value="#{documentoManagedBean.documento.aluno}" maxlength="70" size="70" required="true" requiredMessage="#{msgs.alunoObrigatorio}" />
+
+			<h:outputLabel for="assunto" value="#{msgs.assunto}" />
+			<h:inputTextarea id="assunto" value="#{documentoManagedBean.documento.assunto}" cols="50" rows="3" required="true" requiredMessage="#{msgs.assuntoObrigatorio}" />
+
+			<h:outputLabel for="disciplina" value="#{msgs.disciplina}" />
+			<h:inputText id="disciplina" value="#{documentoManagedBean.documento.disciplina}" maxlength="100" size="100" required="true" requiredMessage="#{msgs.disciplinaObrigatorio}" />
+
+			<h:outputLabel for="grupoestudos" value="#{msgs.grupoestudos}" />
+			<h:inputText id="grupoestudos" value="#{documentoManagedBean.documento.grupoestudos}" maxlength="100" size="100" required="true" requiredMessage="#{msgs.grupoObrigatorio}"  />
+
+			<h:outputLabel for="isbn" value="#{msgs.isbn}" />
+			<h:inputText id="isbn" maxlength="17" size="17" value="#{documentoManagedBean.documento.isbn}" required="false" />
+
+			<h:outputLabel for="nome" value="#{msgs.nome}" />
+			<h:inputTextarea id="nome" value="#{documentoManagedBean.documento.nome}" cols="50" rows="3" required="true" requiredMessage="#{msgs.nomeObrigatorio}" />
+
+			<h:outputLabel for="nota" value="#{msgs.nota}" />
+			<h:inputText id="nota" value="#{documentoManagedBean.documento.nota}" maxlength="5" size="5" required="true"  requiredMessage="#{msgs.notaObrigatorio}" >
+				<f:validateDoubleRange minimum="0.0" maximum="10.0" />
+			</h:inputText>
+		
+			<h:outputLabel for="observacoes"  value="#{msgs.observacoes}" />
+			<h:inputTextarea id="observacoes" value="#{documentoManagedBean.documento.observacoes}" cols="50" rows="3" required="false" />
+
+			<h:outputLabel for="path" value="#{msgs.path}"  />
+			<h:inputTextarea id="path" value="#{documentoManagedBean.documento.path}" cols="50" rows="3" required="true" requiredMessage="#{msgs.pathObrigatorio}" />
+
+			<h:outputLabel for="professor" value="#{msgs.professor}" />
+			<h:inputText id="professor" maxlength="50" size="50" value="#{documentoManagedBean.documento.professor}" required="true" requiredMessage="#{msgs.professorObrigatorio}" />
+
+			<h:outputLabel for="tipoDocumento" value="#{msgs.tipoDocumento}" />
+			<h:selectOneMenu id="tipoDocumento" value="#{documentoManagedBean.documento.tipoDocumento}">
+				<f:selectItem id="item1" itemLabel="Livro" itemValue="1" />
+				<f:selectItem id="item2" itemLabel="Artigo" itemValue="2" />
+				<f:selectItem id="item3" itemLabel="Apostila" itemValue="3" />
+				<f:selectItem id="item4" itemLabel="Prova Digitalizada" itemValue="4" />
+				<f:selectItem id="item5" itemLabel="Foto de Aulas" itemValue="5" />
+				<f:selectItem id="item6" itemLabel="Gravacao de Audio Aula" itemValue="6" />
+				<f:selectItem id="item7" itemLabel="Video Aula" itemValue="7" />
+				<f:selectItem id="item8" itemLabel="Monografia" itemValue="8" />
+				<f:selectItem id="item9" itemLabel="Dissertacao" itemValue="9" />
+     	</h:selectOneMenu>
+		</h:panelGrid>
+		<h:panelGrid columns="2">
+			<h:commandButton action="#{documentoManagedBean.createDocumentoEnd()}" value="#{msgs.criar}" />
+			<h:commandButton action="#{documentoManagedBean.listAllDocumentos()}" value="#{msgs.cancel}" immediate="true" />
+		</h:panelGrid>
+		<br/>
+	</h:form>
+	</f:view>
+</h:body>
+</html>
