@@ -1,1 +1,1 @@
-Projeto CRUD SIMPLES usando eclipse, ejb, Jboss e MySql
+Standard study design using EJB + JBOSS + MYSQL
